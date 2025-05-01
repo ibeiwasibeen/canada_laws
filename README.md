@@ -35,7 +35,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - Special thanks to [GitHub Pages](https://pages.github.com/) for hosting the site.
 - All content is based on publicly available Canadian laws and legal documents.
-
-## Contact
-
-For more information, please reach out via email at [zlat.oleinichenko@gmail.com](mailto:zlat.oleinichenko@gmail.com).
