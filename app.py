@@ -6,8 +6,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
+    print("⚠️ index() сработал!")
     ip_address = request.remote_addr
-    print(f"Received request from: {ip_address}") 
+    print("Received request from: {ip_address}") 
     
     with open("ip_log.txt", "a") as log_file:
         log_file.write(f"{datetime.now()}: {ip_address}\n")
