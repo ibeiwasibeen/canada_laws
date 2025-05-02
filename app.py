@@ -1,21 +1,25 @@
+import os
 from flask import Flask, render_template, request
 from datetime import datetime
-from waitress import serve 
+from waitress import serve
 
 app = Flask(__name__)
 
+# Определяем путь в /tmp для Render
+LOG_PATH = os.path.join("/tmp", "ip_log.txt")
+
 @app.route('/')
 def index():
-    print("⚠️ index() сработал!")
     ip_address = request.remote_addr
-    print("Received request from: {ip_address}") 
-    
-    with open("ip_log.txt", "a") as log_file:
+    print(f"Received request from: {ip_address}")
+
+    with open(LOG_PATH, "a") as log_file:
         log_file.write(f"{datetime.now()}: {ip_address}\n")
-    
+
     return render_template("index.html")
 
 if __name__ == "__main__":
     print("Starting the server...")
     serve(app, host="0.0.0.0", port=8000)
+
 
